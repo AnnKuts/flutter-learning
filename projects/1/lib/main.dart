@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'My very first Flutter project'),
     );
   }
 }
@@ -56,13 +56,11 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-  Person _person = Person(firstName: 'Anna', lastName: 'Kuts');
+  final Person _person = Person(firstName: 'Anna', lastName: 'Kuts');
 
-  final TextEditingController _firstNameController =
-  TextEditingController();
+  final TextEditingController _firstNameController = TextEditingController();
 
-  final TextEditingController _lastNameController =
-  TextEditingController();
+  final TextEditingController _lastNameController = TextEditingController();
 
   void _incrementCounter() {
     setState(() {
@@ -72,8 +70,6 @@ class _MyHomePageState extends State<MyHomePage> {
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
       _counter++;
-      _person.firstName = _firstNameController.text;
-      _person.lastName = _lastNameController.text;
     });
   }
 
@@ -118,60 +114,58 @@ class _MyHomePageState extends State<MyHomePage> {
               'Привіт, ${_person.fullName}!',
               style: Theme.of(context).textTheme.headlineSmall,
             ),
-        Padding(
-            padding: const EdgeInsets.only(bottom: 16),
-child: Center(
-             child: SizedBox(
-             width: 400,
-             child: TextField(
-              controller: _firstNameController,
-              decoration: const InputDecoration(
-                labelText: 'Імʼя',
-                border: OutlineInputBorder(),
-              ),
-           ),
-           ),
-            ),
-        ),
-        Padding(
-            padding: const EdgeInsets.only(bottom: 16),
-            child: Center (
-              child: SizedBox(
-                width: 400,
-            child: TextField(
-              controller: _lastNameController,
-              decoration: const InputDecoration(
-                labelText: 'Прізвище',
-                border: OutlineInputBorder(),
-              ),
-            ),
-              ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 16),
+              child: Center(
+                child: SizedBox(
+                  width: 400,
+                  child: TextField(
+                    controller: _firstNameController,
+                    decoration: const InputDecoration(
+                      labelText: 'Імʼя',
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                ),
               ),
             ),
             Padding(
               padding: const EdgeInsets.only(bottom: 16),
-            child: ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  _person = Person(
-                    firstName: _firstNameController.text,
-                    lastName: _lastNameController.text,
-                  );
-                });
-              },
-              child: const Text('Застосувати'),
+              child: Center(
+                child: SizedBox(
+                  width: 400,
+                  child: TextField(
+                    controller: _lastNameController,
+                    decoration: const InputDecoration(
+                      labelText: 'Прізвище',
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                ),
+              ),
             ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 16),
+              child: ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    _person.firstName = _firstNameController.text;
+                    _person.lastName = _lastNameController.text;
+                  });
+                },
+                child: const Text('Застосувати'),
+              ),
             ),
             const Text('Сьогодні ти полаявся стільки разів:'),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
-        ElevatedButton(
-          onPressed: _incrementCounter,
-          child: const Icon(Icons.add),
-        ),
-        ]
+            ElevatedButton(
+              onPressed: _incrementCounter,
+              child: const Icon(Icons.add),
+            ),
+          ],
         ),
       ),
     );

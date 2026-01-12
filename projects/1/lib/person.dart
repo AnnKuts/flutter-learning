@@ -2,11 +2,9 @@ class Person {
   String _firstName;
   String _lastName;
 
-  Person({
-    required String firstName,
-    required String lastName,
-  })  : _firstName = firstName,
-        _lastName = lastName;
+  Person({required String firstName, required String lastName})
+    : _firstName = firstName,
+      _lastName = lastName;
 
   String get firstName => _firstName;
   String get lastName => _lastName;
@@ -18,5 +16,6 @@ class Person {
   set lastName(String value) {
     _lastName = value;
   }
+
   String get fullName => '$firstName $lastName';
 }
