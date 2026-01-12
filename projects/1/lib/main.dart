@@ -58,6 +58,12 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   Person _person = Person(firstName: 'Anna', lastName: 'Kuts');
 
+  final TextEditingController _firstNameController =
+  TextEditingController();
+
+  final TextEditingController _lastNameController =
+  TextEditingController();
+
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
@@ -109,6 +115,31 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               'Привіт, ${_person.fullName}!',
               style: Theme.of(context).textTheme.headlineSmall,
+            ),
+            TextField(
+              controller: _firstNameController,
+              decoration: const InputDecoration(
+                labelText: 'Імʼя',
+                border: OutlineInputBorder(),
+              ),
+            ),
+            TextField(
+              controller: _lastNameController,
+              decoration: const InputDecoration(
+                labelText: 'Прізвище',
+                border: OutlineInputBorder(),
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  _person = Person(
+                    firstName: _firstNameController.text,
+                    lastName: _lastNameController.text,
+                  );
+                });
+              },
+              child: const Text('Застосувати'),
             ),
             const Text('You have pushed the button this many times:'),
             Text(
