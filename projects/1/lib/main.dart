@@ -116,21 +116,39 @@ class _MyHomePageState extends State<MyHomePage> {
               'Привіт, ${_person.fullName}!',
               style: Theme.of(context).textTheme.headlineSmall,
             ),
-            TextField(
+        Padding(
+            padding: const EdgeInsets.only(bottom: 16),
+child: Center(
+             child: SizedBox(
+             width: 400,
+             child: TextField(
               controller: _firstNameController,
               decoration: const InputDecoration(
                 labelText: 'Імʼя',
                 border: OutlineInputBorder(),
               ),
+           ),
+           ),
             ),
-            TextField(
+        ),
+        Padding(
+            padding: const EdgeInsets.only(bottom: 16),
+            child: Center (
+              child: SizedBox(
+                width: 400,
+            child: TextField(
               controller: _lastNameController,
               decoration: const InputDecoration(
                 labelText: 'Прізвище',
                 border: OutlineInputBorder(),
               ),
             ),
-            ElevatedButton(
+              ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 16),
+            child: ElevatedButton(
               onPressed: () {
                 setState(() {
                   _person = Person(
@@ -141,19 +159,25 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               child: const Text('Застосувати'),
             ),
-            const Text('You have pushed the button this many times:'),
+            ),
+            const Text('Сьогодні ти полаявся стільки разів:'),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
-          ],
+        ElevatedButton(
+          onPressed: _incrementCounter,
+          child: const Icon(Icons.add),
+        ),
+        ]
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: _incrementCounter,
+      //   tooltip: 'Increment',
+      //   child: const Icon(Icons.add),
+      // ),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
