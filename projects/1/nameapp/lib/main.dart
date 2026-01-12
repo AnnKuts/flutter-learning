@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'person.dart';
 
 void main() {
   runApp(const MyApp());
@@ -55,6 +56,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  Person _person = Person(firstName: 'Anna', lastName: 'Kuts');
 
   void _incrementCounter() {
     setState(() {
@@ -104,6 +106,10 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: .center,
           children: [
+            Text(
+              'Привіт, ${_person.fullName}!',
+              style: Theme.of(context).textTheme.headlineSmall,
+            ),
             const Text('You have pushed the button this many times:'),
             Text(
               '$_counter',
