@@ -16,6 +16,5 @@ class Person {
   set lastName(String value) {
     _lastName = value;
   }
-
   String get fullName => '$firstName $lastName';
 }
