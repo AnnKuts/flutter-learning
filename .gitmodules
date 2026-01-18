@@ -1,0 +1,3 @@
+[submodule "projects/2"]
+	path = projects/2
+	url = https://github.com/AnnKuts/habit-tracker
