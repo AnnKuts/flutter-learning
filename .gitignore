@@ -120,3 +120,4 @@ app.*.symbols
 
 # System files
 .idea
+.DS_Store
