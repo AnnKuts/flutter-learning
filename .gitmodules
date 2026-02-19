@@ -4,3 +4,6 @@
 [submodule "projects/3"]
 	path = projects/3
 	url = https://github.com/AnnKuts/habit-tracker
+[submodule "projects/4"]
+	path = projects/4
+	url = https://github.com/AnnKuts/habit-tracker
