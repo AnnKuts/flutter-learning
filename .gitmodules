@@ -10,6 +10,3 @@
 [submodule "projects/5"]
 	path = projects/5
 	url = https://github.com/AnnKuts/habit-tracker
-[submodule "projects/6"]
-	path = projects/6
-	url = https://github.com/AnnKuts/habit-tracker
